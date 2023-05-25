@@ -109,12 +109,11 @@ while(jogar=='sim'):
                               pos+=1
                          else:
                               pos+=1
-                         if('_' not in resposta):
-                              limpa()
-                              print(f'Parabens voce ganhou! Total de erros: {i}')
-                              print(f'A palavra era: {escolha_computador}')
-                              i=1000
-                              break
+               if('_' not in resposta):
+                    limpa()
+                    print(f'Parabens voce ganhou! Total de erros: {i}')
+                    print(f'A palavra era: {escolha_computador}')
+                    break
                else:
                     i+=1
                     limpa()
