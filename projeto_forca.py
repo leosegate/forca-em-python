@@ -1,7 +1,7 @@
 import random
 
 def limpa():
-     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+     print("\n"*20)
 
 des_forca = ['''
  +---+
