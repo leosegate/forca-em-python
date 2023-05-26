@@ -80,6 +80,8 @@ lista_palavras = {
      }
 }
 
+tried_letters = []
+
 limpa()
 print('Bem vindo(a) ao jogo da forca!')
 jogar = input("Desejar jogar? (sim/nao): ").lower()
@@ -96,8 +98,13 @@ while(jogar=='sim'):
           resposta = len(escolha_computador)*'_'
           i=0
           while(i<len(des_forca)):
+               print(f"Letras ja usadas: {','.join(tried_letters)}")
                letra = input("Digite a letra: ").lower()
-               if letra in escolha_computador:
+               while(letra in tried_letters):
+                    limpa()
+                    print(f"Letras ja usadas: {','.join(tried_letters)}")
+                    letra = input(f'Voce ja tentou essa letra ("{letra}"), tente novamente: ').lower()
+               if (letra in escolha_computador):
                     pos=0
                     while(pos<len(escolha_computador)):
                          if(letra==escolha_computador[pos]):
@@ -117,6 +124,7 @@ while(jogar=='sim'):
                else:
                     i+=1
                     limpa()
+                    tried_letters.append(letra)
                     print(f"Nao tem '{letra}'.")
                     print(f"Tentativas restantes: {(len(des_forca)-1)-i}")
                     print(des_forca[i])
