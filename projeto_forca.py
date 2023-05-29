@@ -117,13 +117,13 @@ while(jogar=='sim'):
                     pos=0
                     while(pos<len(escolha_computador)):
                          if(letra==escolha_computador[pos]):
-                              print('Voce achou uma letra!')
-                              print(des_forca[i])
                               resposta[pos] = letra
-                              print(''.join(resposta))
                               pos+=1
                          else:
                               pos+=1
+                    print('Voce achou uma letra!')
+                    print(des_forca[i])
+                    print(''.join(resposta))
                     tried_letters.append(letra)
                else:
                     i+=1
@@ -152,14 +152,11 @@ while(jogar=='sim'):
                     if(dica == 'sim'):
                               l = list(escolha_computador) 
                               index = random.randrange(len(l))
-                              while(resposta[index]=='_'):
-                                   if(resposta[index]=='_'):
-                                        resposta[index] = l[index]
-                                        print(''.join(resposta))
-                                        num_dicas += 1
-                                        break;
-                                   else:
-                                        index = random.randrange(len(l))
+                              while(resposta[index] != '_'):
+                                   index = random.randrange(len(l))
+                              resposta[index] = l[index]
+                              print(''.join(resposta))
+                              num_dicas += 1
      else:
           print("Nao existe essa opcao.")
      jogar = input('Deseja jogar denovo? (sim/nao): ')
